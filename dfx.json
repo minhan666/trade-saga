@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "TradeSaga_backend": {
+      "main": "src/TradeSaga_backend/main.mo",
+      "type": "motoko",
+      "args": "--enhanced-orthogonal-persistence"
+    },
+    "TradeSaga_frontend": {
+      "dependencies": ["TradeSaga_backend"],
+      "frontend": {
+        "entrypoint": "src/TradeSaga_frontend/index.html"
+      },
+      "source": ["src/TradeSaga_frontend/dist"],
+      "type": "assets",
+      "workspace": "TradeSaga_frontend"
+    },
+    "internet_identity": {
+      "type": "pull",
+      "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+    }
+  },
+  "output_env_file": ".env",
+  "defaults": {
+    "build": {
+      "packtool": "mops sources"
+    }
+  },
+  "version": 1
+}
